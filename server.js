@@ -7,7 +7,8 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'password',
-    database: 'chemicals'
+    database: 'chemicals',
+    // port: 3306
 });
 
 connection.connect((err) => {
@@ -21,11 +22,15 @@ connection.connect((err) => {
 
 //If using db as self instead of root, add to Workbench query and execute: ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
 
-connection.query('SELECT COUNT(*) FROM `names`', function (error, results, fields) {
+//replace hcl with ${mysql.escape(userVariable)}
+//wrap query with ``
+
+connection.query(`SELECT chemical_name FROM names WHERE chemical_name LIKE 'hydrochloric%'`,  (error, results, fields)=> {
     if (error) throw error;
-     console.log('results', results);
-   
+console.log('results', results);
 });
+
+
 
 connection.end((err) => {
     // The connection is terminated gracefully
