@@ -21,11 +21,10 @@ connection.connect((err) => {
 
 //If using db as self instead of root, add to Workbench query and execute: ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
 
-connection.query('SELECT * FROM chemicals.categories', function (error, results, fields) {
+connection.query('SELECT COUNT(*) FROM `names`', function (error, results, fields) {
     if (error) throw error;
-    console.log('The solution is: ', results[0].solution);
-    console.log('Data received from Db:\n');
-    console.log(rows);
+     console.log('results', results);
+   
 });
 
 connection.end((err) => {
