@@ -1,0 +1,23 @@
+{
+  "name": "chemical-storage-solution",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "same"
+  },
+  "keywords": [
+    "chemical",
+    "storage"
+  ],
+  "author": "Rhys Lutsky",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
