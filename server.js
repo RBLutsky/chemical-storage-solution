@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'password',
-    database: 'chemicals',
+    database: 'mydb',
     // port: 3306
 });
 
@@ -23,14 +23,20 @@ connection.connect((err) => {
 //If using db as self instead of root, add to Workbench query and execute: ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
 
 //replace hcl with ${mysql.escape(userVariable)}
-//wrap query with ``
 
-connection.query(`SELECT chemical_name FROM names WHERE chemical_name LIKE 'hydrochloric%'`,  (error, results, fields)=> {
+
+
+//Search for a chemical in the chemical table by name that user input
+connection.query(`SELECT * FROM chemical WHERE chemical_name LIKE 'hydrochloric%'`,  (error, results, fields)=> {
     if (error) throw error;
 console.log('results', results);
 });
 
-
+//Select a specific chemical from the chemical table by id (user click on name)
+connection.query(`SELECT * FROM chemical WHERE id = 417`, (error, results, fields) => {
+    if (error) throw error;
+    console.log('results', results);
+});
 
 connection.end((err) => {
     // The connection is terminated gracefully
