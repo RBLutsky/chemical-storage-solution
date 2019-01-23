@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 
 class Category extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             category: '',
@@ -12,8 +12,10 @@ class Category extends Component {
     }
 
     render() {
-        return (
-            //SOME JSX TO DISPLAY
-        );    
+        return;
+        //SOME JSX TO DISPLAY
+
     }
 }
+
+export default Category
