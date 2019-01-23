@@ -45,8 +45,28 @@ pool.getConnection((err, connection) => {
     })
 });
 
-
 //Select a specific chemical from the chemical table by id (user click on name)
+pool.getConnection((err, connection) => {
+    if (err) throw err; // not connected!
+    app.get('/chemical/:chemicalId', (req, res) => {
+        let chemicalId = req.params.chemicalId;
+        connection.query(`SELECT * FROM chemical WHERE id = "${chemicalId}";`, (error, results, fields) => {
+            if (error) {
+                console.log('Error connecting to Db' + error);
+                return;
+            }
+            console.log('Connection established');
+            res.json(results);
+            // When done with the connection, release it.
+            connection.release();
+            console.log("connection released");
+            // Handle error after the release.
+            if (error) throw error;
+            // Don't use the connection here, it has been returned to the pool.
+        });
+    })
+});
+
 // pool.query(`SELECT * FROM chemical WHERE id = 417`, (error, results, fields) => {
 //     if (error) throw error;
 //     console.log('results', results);
