@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
 var mysql = require('mysql');
 //our application creates a group of connections that will stay open to the database and then will use and reuse the connections whenever they become free
-var pool = mysql.createPool({ 
-//connect to MySQL Database with mysql node pkg.  This is a shortcut for the pool.getConnection() -> connection.query() -> connection.release() code flow
+var pool = mysql.createPool({
+    //connect to MySQL Database with mysql node pkg.   
     connectionLimit: 10,
     host: 'localhost',
     user: 'user',
@@ -12,30 +13,37 @@ var pool = mysql.createPool({
     // port: 3306
 });
 
-
-// pool.connect((err) => {
-//     if (err) {
-//         console.log('Error connecting to Db' + err.stack);
-//         return;
-//     }
-//     console.log('Connection established');
-// });
-
-
-//If using db as self instead of root, add to Workbench query and execute: ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
-
-//replace hcl with ${mysql.escape(userVariable)}
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 
 
 
-//Search for a chemical in the chemical table by name that user input
-app.get('/chemical', (req, res) => {
-    pool.query(`SELECT * FROM chemical WHERE chemical_name LIKE 'hydrochloric%'`,  (error, results, fields)=> {
-        if (error) throw error;
-        res.json(results);
-    // console.log('results', results);
-    });
-})
+//the pool.getConnection() -> connection.query() -> connection.release() code flow
+pool.getConnection((err, connection) => {
+    if (err) throw err; // not connected!
+   
+    // Use the connection
+    //Search for a chemical in the chemical table by name that user input
+    app.get('/chemical', (req, res) => {
+        let searchTerm = req.query.searchTerm;
+        connection.query(`SELECT * FROM chemical WHERE chemical_name LIKE "%${searchTerm}%";`, (error, results, fields) => {
+            if (error) {
+                console.log('Error connecting to Db' + error);
+                return;
+            }
+            console.log('Connection established');
+            res.json(results);
+            // When done with the connection, release it.
+            connection.release();
+            console.log("connection released");
+            // Handle error after the release.
+            if (error) throw error;
+    // Don't use the connection here, it has been returned to the pool.
+        });
+    })
+});
 
 
 //Select a specific chemical from the chemical table by id (user click on name)
@@ -51,7 +59,6 @@ app.get('/chemical', (req, res) => {
 // });
 
 
-app.listen(7000
-    , () => {
-    console.log("None.js is listening on port" + 7000)
+app.listen(7000, () => {
+    console.log("Node.js is listening on port" + 7000)
 })
