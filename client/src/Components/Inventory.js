@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 
-class Inventory extends Component {
+class InventoryPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,4 +21,4 @@ class Inventory extends Component {
     }
 }
 
-export default Inventory
+export default InventoryPage

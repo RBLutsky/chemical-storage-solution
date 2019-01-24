@@ -1,0 +1,252 @@
+[
+    {
+        "Storage Category": "Gas - Flammable",
+        "Category Definitions": "",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "Gas - Non Flam",
+        "Category Definitions": "",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "Gas - Oxidizing",
+        "Category Definitions": "",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "Gas - Poison",
+        "Category Definitions": "",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "Gas cylinders",
+        "Category Definitions": "",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-1",
+        "Category Definitions": "INORGANIC #1 - Metals & Hydrides",
+        "Storage Cautions": "Store away from any water. Store flammable solids in flammables cabinet."
+    },
+    {
+        "Storage Category": "I-1 Radioactive",
+        "Category Definitions": "INORGANIC #1 - Metals & Hydrides",
+        "Storage Cautions": "Store away from any water. Store flammable solids in flammables cabinet."
+    },
+    {
+        "Storage Category": "I-1 Separate",
+        "Category Definitions": "INORGANIC #1 - Metals & Hydrides",
+        "Storage Cautions": "Store away from any water. Store flammable solids in flammables cabinet."
+    },
+    {
+        "Storage Category": "I-10",
+        "Category Definitions": "INORGANIC #10 - Reactives (Sulfur, Phosphorus (double packaged), Arsenic, Phosphorus Pentoxide)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-10 Flam Cabinet",
+        "Category Definitions": "INORGANIC #10 - Reactives (Sulfur, Phosphorus (double packaged), Arsenic, Phosphorus Pentoxide)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-2",
+        "Category Definitions": "INORGANIC #2 - Salts (Halides, Sulfates, Sulfites, Thiosulfates, Phosphates, Halogens, Acetates, Oxalates, Phthalates, Oleates, Iodides)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-2 Acid Cabinet",
+        "Category Definitions": "INORGANIC #2 - Salts (Halides, Sulfates, Sulfites, Thiosulfates, Phosphates, Halogens, Acetates, Oxalates, Phthalates, Oleates, Iodides)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-2 Radioactive",
+        "Category Definitions": "INORGANIC #2 - Salts (Halides, Sulfates, Sulfites, Thiosulfates, Phosphates, Halogens, Acetates, Oxalates, Phthalates, Oleates, Iodides)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-3",
+        "Category Definitions": "INORGANIC #3 - Oxidizers (Amides, Nitrates (not Ammonium Nitrate), Nitrites, Azides)",
+        "Storage Cautions": "Store Ammonium Nitrate away from all other substances?ISOLATE IT!"
+    },
+    {
+        "Storage Category": "I-3 Radioactive",
+        "Category Definitions": "INORGANIC #3 - Oxidizers (Amides, Nitrates (not Ammonium Nitrate), Nitrites, Azides)",
+        "Storage Cautions": "Store Ammonium Nitrate away from all other substances?ISOLATE IT!"
+    },
+    {
+        "Storage Category": "I-3 Separate",
+        "Category Definitions": "INORGANIC #3 - Oxidizers (Amides, Nitrates (not Ammonium Nitrate), Nitrites, Azides)",
+        "Storage Cautions": "Store Ammonium Nitrate away from all other substances?ISOLATE IT!"
+    },
+    {
+        "Storage Category": "I-4",
+        "Category Definitions": "INORGANIC #4 - Corrosive Bases (dry Hydroxides, Oxides, Silicates, Carbonates, Carbon)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-4 Base Cabinet",
+        "Category Definitions": "INORGANIX #4 - Corrosive Bases (liquid >1.0 molar Ammonium Hydroxide (limewater), Potassium Hydroxide, Oxides, Silicates)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-5",
+        "Category Definitions": "INORGANIC #5 - Sulfides, Selenides, Phosphides, Carbides, Nitrides",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-5 Flam Cabinet",
+        "Category Definitions": "INORGANIC #5 - Sulfides, Selenides, Phosphides, Carbides, Nitrides",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-6",
+        "Category Definitions": "INORGANIC #6 - Chlorates, Bromates, Iodates, Chlorites, Hypochlorites, Perchlorates, Perchloric Acid, Peroxides, Hydrogen Peroxide",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-6 Acid Cabinet",
+        "Category Definitions": "INORGANIC #6 - Chlorates, Bromates, Iodates, Chlorites, Hypochlorites, Perchlorates, Perchloric Acid, Peroxides, Hydrogen Peroxide",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-7",
+        "Category Definitions": "INORGANIC #7 - Toxins (Arsenates, Cyanides, Cyanates)",
+        "Storage Cautions": "Store away from any water."
+    },
+    {
+        "Storage Category": "I-8",
+        "Category Definitions": "INORGANIC #8 - Borates, Chromates, Manganates, Permanganates, Molybdates, Vanadates",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-8 Acid Cabinet",
+        "Category Definitions": "INORGANIC #8 - Borates, Chromates, Manganates, Permanganates, Molybdates, Vanadates",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "I-9",
+        "Category Definitions": "INORGANIC #9 - Acids",
+        "Storage Cautions": "Acids are best stored in dedicated cabinets. *Store nitric acid away from other acids unless your acid cabinet provides a separate compartment for nitric acid."
+    },
+    {
+        "Storage Category": "I-9 Acid Cabinet",
+        "Category Definitions": "INORGANIC #9 - Acids",
+        "Storage Cautions": "Acids are best stored in dedicated cabinets. *Store nitric acid away from other acids unless your acid cabinet provides a separate compartment for nitric acid."
+    },
+    {
+        "Storage Category": "I-9 Acid Cabinet (Separate)",
+        "Category Definitions": "INORGANIC #9 - Acids",
+        "Storage Cautions": "Acids are best stored in dedicated cabinets. *Store nitric acid away from other acids unless your acid cabinet provides a separate compartment for nitric acid."
+    },
+    {
+        "Storage Category": "Misc",
+        "Category Definitions": "MISCELLANEOUS",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "O-1",
+        "Category Definitions": "ORGANIC #1 - Dry and Dilute Organic Acids and Anhydrides (Acids, Amino Acids, Anhydrides, Peracids)",
+        "Storage Cautions": "Store certain organic acids in acid cabinet."
+    },
+    {
+        "Storage Category": "O-1 Flam Cabinet",
+        "Category Definitions": "ORGANIC #1 - Dry and Dilute Organic Acids and Anhydrides (Acids, Amino Acids, Anhydrides, Peracids)",
+        "Storage Cautions": "Store certain organic acids in acid cabinet."
+    },
+    {
+        "Storage Category": "O-2",
+        "Category Definitions": "ORGANIC #2 - Alcohols, Glycols, Sugars, Amines, Amides, Imines, Imides",
+        "Storage Cautions": "Store flammables in a dedicated cabinet."
+    },
+    {
+        "Storage Category": "O-2 Base Cabinet",
+        "Category Definitions": "ORGANIC #2 - Alcohols, Glycols, Sugars, Amines, Amides, Imines, Imides",
+        "Storage Cautions": "Store flammables in a dedicated cabinet."
+    },
+    {
+        "Storage Category": "O-2 Flam Cabinet",
+        "Category Definitions": "ORGANIC #2 - Alcohols, Glycols, Sugars, Amines, Amides, Imines, Imides",
+        "Storage Cautions": "Store flammables in a dedicated cabinet."
+    },
+    {
+        "Storage Category": "O-3",
+        "Category Definitions": "ORGANIC #3 - Hydrocarbons, Oils, Esters, Aldehydes",
+        "Storage Cautions": "Store flammables in a dedicated cabinet."
+    },
+    {
+        "Storage Category": "O-3 Flam Cabinet",
+        "Category Definitions": "ORGANIC #3 - Hydrocarbons, Oils, Esters, Aldehydes",
+        "Storage Cautions": "Store flammables in a dedicated cabinet."
+    },
+    {
+        "Storage Category": "O-4",
+        "Category Definitions": "ORGANIC #4 - Ethers, Ketones, Halogenated Hydrocarbons, Ethylene Oxide",
+        "Storage Cautions": "Store flammables in a dedicated cabinet."
+    },
+    {
+        "Storage Category": "O-4 Acid Cabinet",
+        "Category Definitions": "ORGANIC #4 - Ethers, Ketones, Halogenated Hydrocarbons, Ethylene Oxide",
+        "Storage Cautions": "Store flammables in a dedicated cabinet."
+    },
+    {
+        "Storage Category": "O-4 Flam Cabinet",
+        "Category Definitions": "ORGANIC #4 - Ethers, Ketones, Halogenated Hydrocarbons, Ethylene Oxide",
+        "Storage Cautions": "Store flammables in a dedicated cabinet."
+    },
+    {
+        "Storage Category": "O-5",
+        "Category Definitions": "ORGANIC #5 - Toxins (Epoxy Compounds, Isocyanates)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "O-5 Flam Cabinet",
+        "Category Definitions": "ORGANIC #5 - Toxins (Epoxy Compounds, Isocyanates)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "O-6",
+        "Category Definitions": "ORGANIC #6 - Reactives (Peroxides, Hydroperoxides)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "O-7",
+        "Category Definitions": "ORGANIC #7 - Toxins (Sulfides, Polysulfides)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "O-7 Flam Cabinet",
+        "Category Definitions": "ORGANIC #7 - Toxins (Sulfides, Polysulfides)",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "O-8",
+        "Category Definitions": "ORGANIC #8 - Phenols, Cresols",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "O-8 Flam Cabinet",
+        "Category Definitions": "ORGANIC #8 - Phenols, Cresols",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "O-9",
+        "Category Definitions": "ORGANIC #9 - Dyes, Stains, Indicators",
+        "Storage Cautions": "Store alcohol-based solutions in flammables cabinet."
+    },
+    {
+        "Storage Category": "O-9 Flam Cabinet",
+        "Category Definitions": "ORGANIC #9 - Dyes, Stains, Indicators",
+        "Storage Cautions": "Store alcohol-based solutions in flammables cabinet."
+    },
+    {
+        "Storage Category": "Poison Gas",
+        "Category Definitions": "",
+        "Storage Cautions": ""
+    },
+    {
+        "Storage Category": "Sink area",
+        "Category Definitions": "",
+        "Storage Cautions": ""
+    }
+]
