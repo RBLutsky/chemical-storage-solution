@@ -1,31 +1,45 @@
 //PAGE = SEARCH BY CHEMICAL NAME
 //includes: 
-    //search for chemcial by name
-    //return list of matches
-    //click to add to inventory
-//button to HomePage
-//button to Inventory
+//search for chemcial by name -> SearchBar.js
+//return list of matches
+//click to add to inventory
+
 
 import React from 'react';
 import { Component } from 'react';
-import SearchBar from './SearchBar';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
+import chemicalNames from '../data/chemicalNames';
 
 class ChemicalPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            chemicals: [],
+            searchResults: []
         };
         this.chemicalSearch = this.chemicalSearch.bind(this);
     }
 
     //search for a chemical
     chemicalSearch(searchTerm) {
-        console.log('the chemicalPage:' ,searchTerm);
-
+        console.log('chemicalSearch1:', searchTerm);
+        // let results = chemicalNames.forEach(chemical => {
+        //     if (searchTerm === chemical['Chemical Name']) {
+        //         console.log('got em:', results);
+        //     }
+        // });
+        let results = chemicalNames.filter(chem => {
+            if (chem['Chemical Name'].toLowerCase().includes(searchTerm.toLowerCase())) {
+                return chem;
+            } else {
+                return;
+            }
+        });
+        console.log('RESULTS ARE', results)
     }
+
+
 
     render() {
         return (
@@ -33,7 +47,7 @@ class ChemicalPage extends Component {
                 <h1>Search by Chemical Name</h1>
 
                 {/* set new prop/value(function) to pass to SearchBar */}
-                <SearchBar onSearchTermChange={this.chemicalSearch} />
+                <SearchBar chemicalSearch={this.chemicalSearch} />
                 <Chemical-SearchList />
                 <Link to='/'>
                     <Button color="primary">Home</Button>
@@ -47,4 +61,4 @@ class ChemicalPage extends Component {
     }
 }
 
-    export default ChemicalPage
+export default ChemicalPage

@@ -20,7 +20,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path='/' component={HomePage} />
                     {/* to show details of 1 chemical */}
-                    <Route path='/chemical/:id' component={ChemicalDetailsPage}/>
+                    {/* <Route path='/chemical/:id' component={ChemicalDetailsPage}/> */}
                     <Route path='/chemical' component={ChemicalPage}/>
                     <Route path='/inventory' component={InventoryPage}/>
                     <Redirect to='/'/>

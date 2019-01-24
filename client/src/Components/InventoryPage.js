@@ -1,5 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
+import {Link} from 'react-router-dom';
+import {Button} from 'reactstrap';
 
 class InventoryPage extends Component {
     constructor(props) {
@@ -15,9 +17,14 @@ class InventoryPage extends Component {
     }
 
     render() {
-        return;
-        //SOME JSX TO DISPLAY
-
+        return( 
+        <div>
+            <h1>My Storage Solution</h1>
+            <Link to='/'>
+                <Button color="primary">Home</Button>
+            </Link>
+        </div>
+        )
     }
 }
 

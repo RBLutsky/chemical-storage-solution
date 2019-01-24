@@ -15,7 +15,9 @@ const Home = () => {
                         <Link to='/chemical'> 
                             <Button color="primary">SEARCH</Button>
                         </Link>
-                        <Button color="primary">VIEW INVENTORY</Button>
+                        <Link to='/inventory'> 
+                            <Button color="primary">VIEW INVENTORY</Button>
+                        </Link>
                     </p>
                 </Jumbotron>
             </div>
