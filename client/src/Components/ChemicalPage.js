@@ -8,7 +8,8 @@
 import React from 'react';
 // import { Component } from 'react';
 import SearchBar from './SearchBar';
-import { Switch, Route } from 'react-router-dom';
+import { Button} from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 const ChemicalPage = () => {
@@ -32,10 +33,6 @@ const ChemicalPage = () => {
             <Link to='/inventory'>
                 <Button color="primary">View Inventory</Button>
             </Link>
-
-
-
-
         </div>
     )
 

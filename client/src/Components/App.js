@@ -1,10 +1,10 @@
 //ALL OF THE ROUTING
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import React,{ Component } from 'react';
 import HomePage from './HomePage';
 import ChemicalPage from './ChemicalPage';
-import InventoryPage from './Inventory';
+import InventoryPage from './InventoryPage';
 import ChemicalDetailsPage from './ChemicalDetailsPage';
 
 class App extends Component {

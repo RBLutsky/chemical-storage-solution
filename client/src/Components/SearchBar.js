@@ -3,10 +3,7 @@ import React, {Component} from 'react';
 class SearchBar extends Component {
     constructor(props) {
         super(props);
-
         this.state = { searchTerm: "" };
-
-
     }
 
     render() {
@@ -22,10 +19,10 @@ class SearchBar extends Component {
     }
     // we want to update the term each time the input changes
     onInputChange(searchTerm) {
-        this.setState({ term });
+        this.setState({ searchTerm });
         // console.log(this.state);
         // invoke props.onSearchTermChange and pass in the term every time the input changes
-        this.props.onSearchTermChange(term);
+        this.props.onSearchTermChange(searchTerm);
     }
 }
 
