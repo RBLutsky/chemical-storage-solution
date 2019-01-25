@@ -5,7 +5,7 @@ import React,{ Component } from 'react';
 import HomePage from './HomePage';
 import ChemicalPage from './ChemicalPage';
 import InventoryPage from './InventoryPage';
-import ChemicalDetailsPage from './ChemicalDetailsPage';
+
 
 class App extends Component {
     constructor() {
@@ -13,8 +13,16 @@ class App extends Component {
         this.state = {
             inventory: [],
         };
+       this.addToInventory = this.addToInventory.bind(this); 
     }
 
+    
+    addToInventory({result}) {
+       this.setState({
+            inventory: this.state.inventory.concat({result})
+        });
+      console.log('inventory: ', this.state);
+    }
 
     render() {
         return (
@@ -23,7 +31,8 @@ class App extends Component {
                     <Route exact path='/' component={HomePage} />
                     {/* to show details of 1 chemical */}
                     {/* <Route path='/chemical/:id' component={ChemicalDetailsPage}/> */}
-                    <Route path='/chemical' component={ChemicalPage}/>
+                    <Route path='/chemical' render={(props) => <ChemicalPage {...props} addToInventory={this.addToInventory}/>}
+                    />
                     <Route path='/inventory' component={InventoryPage}/>
                     <Redirect to='/'/>
                 </Switch>

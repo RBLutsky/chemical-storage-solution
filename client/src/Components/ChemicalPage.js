@@ -28,24 +28,20 @@ class ChemicalPage extends Component {
     chemicalSearch(searchTerm) {
         let results = chemicalNames.filter(chem => {
             if (chem['Chemical Name'].toLowerCase().includes(searchTerm.toLowerCase())) {
-                console.log(chem)
                 return chem;
-
             } else {
                 return
                 // alert('No such chemical found');
                 //  WONT GO AWAY WHEN CLICK OK
             }
         });
-        this.setState({ searchResults: results}, function() {
-            console.log(this.state);
+        this.setState({ searchResults: results }, function () {
+            // console.log(this.state);
         })
-        console.log('RESULTS ARE', results)
-       
+        // console.log('RESULTS ARE', results)
     }
 
-
-    // onClearArray = ()=> {
+        // onClearArray = ()=> {
     //     this.setState({searchResults:[]})
     // }
 
@@ -58,7 +54,7 @@ class ChemicalPage extends Component {
                 {/* set new prop/value(function) to pass to SearchBar */}
                 <SearchBar chemicalSearch={this.chemicalSearch} onClearArray={this.onClearArray} />
 
-                <SearchList searchResults={this.state.searchResults} />
+                <SearchList searchResults={this.state.searchResults} addToInventory={this.props.addToInventory}/>
 
                 <Link to='/'>
                     <Button color="primary">Home</Button>

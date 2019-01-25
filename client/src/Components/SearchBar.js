@@ -12,7 +12,7 @@ class SearchBar extends Component {
         this.onClick = this.onClick.bind(this);
     }
 
-    //
+    
     onClick(e) {
         e.preventDefault();
         this.props.chemicalSearch(this.state.searchTerm);
