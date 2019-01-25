@@ -4,17 +4,17 @@ import {Link} from 'react-router-dom';
 import {Button} from 'reactstrap';
 
 class InventoryPage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            //COULD BE EMPTY ARRAY THAT GETS CONCAT FROM OTHERS
-            userId: 'User.id',
-            chemicalName: 'Chemical.chemicalName',
-            storageCategory: 'Chemical.storageCategory',
-            definition: 'Category.definition',
-            cautions: 'Category.cautions'
-        };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         //COULD BE EMPTY ARRAY THAT GETS CONCAT FROM OTHERS
+    //         userId: 'User.id',
+    //         chemicalName: 'Chemical.chemicalName',
+    //         storageCategory: 'Chemical.storageCategory',
+    //         definition: 'Category.definition',
+    //         cautions: 'Category.cautions'
+    //     };
+    // }
 
     render() {
         return( 

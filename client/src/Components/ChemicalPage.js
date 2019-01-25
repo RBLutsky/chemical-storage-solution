@@ -11,6 +11,7 @@ import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import chemicalNames from '../data/chemicalNames';
+import SearchList from './SearchList';
 
 class ChemicalPage extends Component {
     constructor(props) {
@@ -19,26 +20,25 @@ class ChemicalPage extends Component {
             searchResults: []
         };
         this.chemicalSearch = this.chemicalSearch.bind(this);
+        // this.onClearArray=this.onClearArray.bind(this);
     }
 
     //search for a chemical
     chemicalSearch(searchTerm) {
-        console.log('chemicalSearch1:', searchTerm);
-        // let results = chemicalNames.forEach(chemical => {
-        //     if (searchTerm === chemical['Chemical Name']) {
-        //         console.log('got em:', results);
-        //     }
-        // });
         let results = chemicalNames.filter(chem => {
             if (chem['Chemical Name'].toLowerCase().includes(searchTerm.toLowerCase())) {
-                return chem;
+                this.setState({searchResults: this.state.searchResults.push(results)})
             } else {
                 return;
             }
         });
         console.log('RESULTS ARE', results)
-    }
+     }
 
+    
+    // onClearArray = ()=> {
+    //     this.setState({searchResults:[]})
+    // }
 
 
     render() {
@@ -47,11 +47,14 @@ class ChemicalPage extends Component {
                 <h1>Search by Chemical Name</h1>
 
                 {/* set new prop/value(function) to pass to SearchBar */}
-                <SearchBar chemicalSearch={this.chemicalSearch} />
-                <Chemical-SearchList />
+                <SearchBar chemicalSearch={this.chemicalSearch} onClearArray={this.onClearArray}/>
+
+                <SearchList searchResults={this.state.searchResults}/>
+
                 <Link to='/'>
                     <Button color="primary">Home</Button>
                 </Link>
+
                 <Link to='/inventory'>
                     <Button color="primary">View Inventory</Button>
                 </Link>

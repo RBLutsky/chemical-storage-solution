@@ -8,10 +8,12 @@ import InventoryPage from './InventoryPage';
 import ChemicalDetailsPage from './ChemicalDetailsPage';
 
 class App extends Component {
-    // constructor() {
-    //     super()
-    //     this.state = {};
-    // }
+    constructor() {
+        super()
+        this.state = {
+            inventory: [],
+        };
+    }
 
 
     render() {
