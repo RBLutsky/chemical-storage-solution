@@ -14,7 +14,6 @@ class SearchBar extends Component {
 
     //
     onClick(e) {
-        alert("A chemical was submitted: " + this.state.searchTerm);
         e.preventDefault();
         this.props.chemicalSearch(this.state.searchTerm);
         // this.props.onClearArray();
