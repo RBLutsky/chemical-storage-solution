@@ -6,12 +6,12 @@ import PropTypes from 'prop-types';
 const SearchList = (props) => {
        // console.log('searchList props: ', props.searchResults.map(result));
     // const searchResults = props.searchResults;
-
+    console.log(props)
     return (
         <ul>
             {props.searchResults.map((result, id) =>
                 <li key={id}>
-                    {result}
+                    <h4>{result['Chemical Name']} {result['Storage Category']}</h4>
                 </li>
             )}
         </ul>
