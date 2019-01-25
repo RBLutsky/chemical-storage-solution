@@ -20,6 +20,7 @@ class InventoryPage extends Component {
         return( 
         <div>
             <h1>My Storage Solution</h1>
+            <h1>{this.props.inventory.length}</h1>
             <Link to='/'>
                 <Button color="primary">Home</Button>
             </Link>
