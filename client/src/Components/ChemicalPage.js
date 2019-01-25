@@ -27,12 +27,14 @@ class ChemicalPage extends Component {
     chemicalSearch(searchTerm) {
         let results = chemicalNames.filter(chem => {
             if (chem['Chemical Name'].toLowerCase().includes(searchTerm.toLowerCase())) {
-                this.setState({searchResults: this.state.searchResults.push(results)})
+                return results;
+                // this.setState({searchResults: [...this.state.searchResults, chem]})
             } else {
-                return;
+                return alert('No such chemical found');
             }
         });
         console.log('RESULTS ARE', results)
+        console.log('state is: ', this.setState.searchResults)
      }
 
     

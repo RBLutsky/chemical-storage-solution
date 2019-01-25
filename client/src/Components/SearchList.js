@@ -2,19 +2,18 @@ import React, { Component } from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-const SearchList = (props) => {
-    //pass from ChemicalPage - props = searchResults
-    //GENERATE ID or use index
 
+const SearchList = (props) => {
+       // console.log('searchList props: ', props.searchResults.map(result));
     // const searchResults = props.searchResults;
 
     return (
         <ul>
-            {this.props.searchResults.map((result, index) =>
-                <li key={index}>
+            {props.searchResults.map((result, id) =>
+                <li key={id}>
                     {result}
                 </li>
-            )}           
+            )}
         </ul>
 
         // <ListGroup>
