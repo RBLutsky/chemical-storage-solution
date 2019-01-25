@@ -16,14 +16,16 @@ class App extends Component {
         this.addToInventory = this.addToInventory.bind(this);
     }
 
-
+    //localStorage only takes strings as values
+    
     addToInventory({ result }) {
-       this.setState({
-            inventory: this.state.inventory.concat({ result })
+        localStorage.setItem('result', JSON.stringify(this.state.inventory));
+        this.setState({inventory: this.state.inventory.concat({ result })
         });
         console.log('inventory: ', this.state);
     }
-   
+
+       
     render() {
         return (
             <div>

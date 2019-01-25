@@ -50,12 +50,10 @@ class ChemicalPage extends Component {
         return (
             <div>
                 <h1>Search by Chemical Name</h1>
-
+               
                 {/* set new prop/value(function) to pass to SearchBar */}
                 <SearchBar chemicalSearch={this.chemicalSearch} onClearArray={this.onClearArray} />
-
-                <SearchList searchResults={this.state.searchResults} addToInventory={this.props.addToInventory}/>
-
+                <br/>
                 <Link to='/'>
                     <Button color="primary">Home</Button>
                 </Link>
@@ -63,6 +61,10 @@ class ChemicalPage extends Component {
                 <Link to='/inventory'>
                     <Button color="primary">View Inventory</Button>
                 </Link>
+
+                <SearchList searchResults={this.state.searchResults} addToInventory={this.props.addToInventory}/>
+
+               
             </div>
         )
 

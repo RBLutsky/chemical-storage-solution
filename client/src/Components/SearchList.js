@@ -4,24 +4,13 @@ import PropTypes from 'prop-types';
 
 
 class SearchList extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         selectedChemicals: []            
-    //     };
-    //     this.onChemicalSelect = this.onChemicalSelect.bind(this);
-    // }
-
-    // onClick(e) {
-    //     e.preventDefault();
-    //     this.props.addToInventory({result});
-    // }
-    
+        
     render() {
         console.log('SearchList: ', this.props);
         return (
             <div className="listBox">
                 <ListGroup>
+                    <p>Search Results:  Click to add to Inventory.</p>
                     {this.props.searchResults.map((result, id) =>
                         <ListGroupItem key={id} >
                             <h4><Button color="secondary" size='sm' onClick={() => this.props.addToInventory({result})}>+</Button>

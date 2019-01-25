@@ -2,6 +2,7 @@ import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import User from './User';
 
 const Home = () => {
     // render() {
@@ -12,9 +13,13 @@ const Home = () => {
                     <p className="lead">Search for safe storage information by chemical name.  Save chemicals to your own inventory sorted for you by storage code. </p>
                     <hr className="my-2" />
                     <p className="lead">
+
+                        {/* <User /> */}
+
                         <Link to='/chemical'> 
                             <Button color="primary">SEARCH</Button>
                         </Link>
+
                         <Link to='/inventory'> 
                             <Button color="primary">VIEW INVENTORY</Button>
                         </Link>
