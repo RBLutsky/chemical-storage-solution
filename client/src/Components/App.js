@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import HomePage from './HomePage';
 import ChemicalPage from './ChemicalPage';
 import InventoryPage from './InventoryPage';
-import Category from './Category';
+import chemicalStorage from '../data/chemicalStorage';
 
 
 class App extends Component {
@@ -13,6 +13,7 @@ class App extends Component {
         super()
         this.state = {
             inventory: [],
+            categories: chemicalStorage
         };
         this.addToInventory = this.addToInventory.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
@@ -101,8 +102,8 @@ class App extends Component {
                     {/* to show details of 1 chemical */}
                     {/* <Route path='/chemical/:id' component={ChemicalDetailsPage}/> */}
 
-                    <Route path='/category' component={Category} />
-                    
+                    {/* <Route path='/category' component={Category} /> */}
+
                     <Route path='/chemical' render={(props) => <ChemicalPage {...props} addToInventory={this.addToInventory}/>}
                     />
                     <Route path='/inventory' render={(props) => <InventoryPage {...props} deleteItem={this.deleteItem} inventory={this.state.inventory} />} />

@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, ListGroup, ListGroupItem } from 'reactstrap';
-
+import _ from 'lodash';
 
 class InventoryPage extends Component {
 
@@ -10,7 +10,13 @@ class InventoryPage extends Component {
         //remove 'result' as new key on array
         let inventory = this.props.inventory
         console.log('INVENTORY', inventory)
+
+        // let categories = this.props.categories
+        // console.log('categories', categories)
        
+        let inventoryGroups = _.groupBy(inventory, "Storage Category");
+        console.log('groups:', inventoryGroups )
+
         return (
             <div>
                 <h1>My Storage Solution</h1>
