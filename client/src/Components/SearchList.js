@@ -11,9 +11,9 @@ class SearchList extends Component {
             <div className="listBox">
                 <ListGroup>
                     <p>Search Results:  Click to add to Inventory.</p>
-                    {this.props.searchResults.map((result, id) =>
-                        <ListGroupItem key={id} >
-                            <h4><Button color="secondary" size='sm' onClick={() => this.props.addToInventory({result})}>+</Button>
+                    {this.props.searchResults.map((result) =>
+                        <ListGroupItem key={result.Id} >
+                            <h4><Button color="secondary" size='sm' onClick={() => this.props.addToInventory(result)}>+</Button>
                                 {result['Chemical Name']} {result['Storage Category']}
                             </h4>
                         </ListGroupItem>
