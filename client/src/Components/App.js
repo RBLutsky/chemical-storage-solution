@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import HomePage from './HomePage';
 import ChemicalPage from './ChemicalPage';
 import InventoryPage from './InventoryPage';
+import Category from './Category';
 
 
 class App extends Component {
@@ -100,10 +101,14 @@ class App extends Component {
                     {/* to show details of 1 chemical */}
                     {/* <Route path='/chemical/:id' component={ChemicalDetailsPage}/> */}
 
+                    <Route path='/category' component={Category} />
+                    
                     <Route path='/chemical' render={(props) => <ChemicalPage {...props} addToInventory={this.addToInventory}/>}
                     />
                     <Route path='/inventory' render={(props) => <InventoryPage {...props} deleteItem={this.deleteItem} inventory={this.state.inventory} />} />
                     <Redirect to='/' />
+
+                    
                 </Switch>
             </div>
         );
