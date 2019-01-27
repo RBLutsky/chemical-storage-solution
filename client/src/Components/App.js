@@ -113,7 +113,10 @@ class App extends Component {
 
                     <Route path='/chemical' render={(props) => <ChemicalPage {...props} addToInventory={this.addToInventory}/>}
                     />
-                    <Route path='/inventory' render={(props) => <InventoryPage {...props} deleteItem={this.deleteItem} inventory={this.state.inventory} />} />
+                    <Route path='/inventory' render={(props) => <InventoryPage {...props} 
+                        deleteItem={this.deleteItem} 
+                        categories={this.state.categories} 
+                        inventoryByCategory={this.state.inventoryByCategory} />} />
                     <Redirect to='/' />
 
                     
