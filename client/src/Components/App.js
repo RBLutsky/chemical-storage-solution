@@ -6,14 +6,15 @@ import HomePage from './HomePage';
 import ChemicalPage from './ChemicalPage';
 import InventoryPage from './InventoryPage';
 import chemicalStorage from '../data/chemicalStorage';
-
+import _ from 'lodash';
 
 class App extends Component {
     constructor() {
         super()
         this.state = {
             inventory: [],
-            categories: chemicalStorage
+            categories: chemicalStorage,
+            inventoryByCategory: []
         };
         this.addToInventory = this.addToInventory.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
@@ -80,6 +81,12 @@ class App extends Component {
         const inventory = [...this.state.inventory];
         //add result to inventory and update state
         this.setState({ inventory: inventory.concat( result ) });
+
+        const inventoryGroups = _.groupBy(inventory, "Storage Category");
+        console.log('groups:', inventoryGroups)
+
+        this.setState({ inventoryByCategory: this.state.inventoryByCategory.concat(inventoryGroups)});
+        console.log('inventoryByCategory: ', this.state.inventoryByCategory)
     }
 
     deleteItem(chemID) {

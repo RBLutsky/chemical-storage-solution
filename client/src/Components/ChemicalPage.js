@@ -52,7 +52,7 @@ class ChemicalPage extends Component {
                 <h1>Search by Chemical Name</h1>
                
                 {/* set new prop/value(function) to pass to SearchBar */}
-                <SearchBar chemicalSearch={this.chemicalSearch} onClearArray={this.onClearArray} />
+                <SearchBar chemicalSearch={this.chemicalSearch} />
                 <br/>
                 <Link to='/'>
                     <Button color="primary">Home</Button>

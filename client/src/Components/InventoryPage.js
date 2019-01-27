@@ -5,17 +5,27 @@ import { Button, ListGroup, ListGroupItem } from 'reactstrap';
 import _ from 'lodash';
 
 class InventoryPage extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             inventoryByCategory: []
+//         }
+//         this.chemicalSort = this.chemicalSort.bind(this);
+//     }
+
+//     chemicalSort() {
+//         let inventory = this.props.inventory
+//         console.log('INVENTORY', inventory)
+
+//         let inventoryGroups = _.groupBy(inventory, "Storage Category");
+//         console.log('groups:', inventoryGroups)
+
+//         this.setState({ inventoryByCategory: inventoryGroups });
+//         console.log('inventoryByCategory: ', this.state.inventoryByCategory)
+//     }
+
 
     render() {
-        //remove 'result' as new key on array
-        let inventory = this.props.inventory
-        console.log('INVENTORY', inventory)
-
-        // let categories = this.props.categories
-        // console.log('categories', categories)
-       
-        let inventoryGroups = _.groupBy(inventory, "Storage Category");
-        console.log('groups:', inventoryGroups )
 
         return (
             <div>
@@ -35,22 +45,22 @@ class InventoryPage extends Component {
 
 
 
-                    <ListGroup>
-                        {inventory.map((item) =>
-                            <ListGroupItem key={item.Id} >
-                                <h5>
-                                    <Button color="secondary" size='sm' onClick={() => this.props.deleteItem(item.Id)}>x</Button>
-                                    {item['Chemical Name']} {item['Storage Category']}
-                                </h5>
-                            </ListGroupItem>
-                        )}
-                    </ListGroup>
-                </div>
+                <ListGroup>
+                    {this.props.inventory.map((item, i) =>
+                        <ListGroupItem key={item.Id + i} >
+                            <h5>
+                                <Button color="secondary" size='sm' onClick={() => this.props.deleteItem(item.Id)}>x</Button>
+                                {item['Chemical Name']} {item['Storage Category']}
+                            </h5>
+                        </ListGroupItem>
+                    )}
+                </ListGroup>
+            </div>
 
 
             // </div>
         )
     }
-}
+ }
 
 export default InventoryPage
