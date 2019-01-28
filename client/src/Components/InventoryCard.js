@@ -1,37 +1,40 @@
 import React, { Component } from 'react';
 import InventoryItem from './InventoryItem';
 import {
-    Card, CardDeck, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText
+    Card, CardDeck, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText, ListGroup, ListGroupItem
 } from 'reactstrap';
 
 
 class InventoryCard extends Component {
 
-    hasChemicals(props) {
-        const inventoryByCategory = [...this.props.inventoryByCategory];
-        // filter out empty categories
-        const fullCategories = inventoryByCategory.filter(category => category.key !== null);
-
-        console.log('FullCategories:', fullCategories)
-
-        return fullCategories;
-
-    }
-
 
 
     render() {
+        
+
         return (
             <div>
                 <CardDeck>
-                    {this.props.categories.map((category, i) =>
+                    {this.props.inventoryByCategory.map((category, i) =>
                         <Card key={i}>
-                            <CardBody inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
-                                <CardTitle>{category['Storage Categoy']}</CardTitle>
+                            <CardBody  style={{ backgroundColor: 'lightgrey', borderColor: '#333', color: 'black'}}
+                            >
+                                <CardTitle>{category["Storage Category"]}</CardTitle>
 
-                                <CardText>{category['Category Definitions']} <b>{category["Storage Cautions"]}</b></CardText>
+                                <CardText>{this.props.categories["Category Definitions"]} <b>{this.props.categories["Storage Cautions"]}</b></CardText>
 
-                                {/* <InventoryItem /> */}
+{/* category["Category Definitions"] category["Storage Cautions"] */}
+                                <ListGroup>
+                                    {this.props.inventoryByCategory[i].map((item, i) =>
+                                        <ListGroupItem key={item.Id + i} >
+                                            <h5>
+                                                <Button color="secondary" size='sm' onClick={() => this.props.deleteItem(item.Id)}>x</Button>
+
+                                                {item['Chemical Name']}
+                                            </h5>
+                                        </ListGroupItem>
+                                    )}
+                                </ListGroup>
 
                                 <Button>Button</Button>
 

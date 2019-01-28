@@ -76,18 +76,27 @@ class App extends Component {
 
     //localStorage only takes strings as values (key, value)
     addToInventory(result) {
-        //new item = result
+
         //copy current inventory
         const inventory = [...this.state.inventory];
         //add result to inventory and update state
-        this.setState({ inventory: inventory.concat( result ) });
+        this.setState({ inventory: inventory.concat(result) });
 
-        const inventoryGroups = _.groupBy(inventory, "Storage Category");
-        console.log('groups:', inventoryGroups)
+        //sort inventory in to storage categories
+        const chemicalsByCategory = _
+            .chain(inventory)
+            .groupBy("Storage Category")
+            .sortBy(["Chemical Name"])
+            .value();
+        console.log('chemicalsByCategory:' ,chemicalsByCategory);
 
-        this.setState({ inventoryByCategory: this.state.inventoryByCategory.concat(inventoryGroups)});
+        this.setState({ inventoryByCategory: chemicalsByCategory});
         console.log('inventoryByCategory: ', this.state.inventoryByCategory)
+
+
+
     }
+
 
     deleteItem(chemID) {
         // copy current inventory
@@ -111,15 +120,15 @@ class App extends Component {
 
                     {/* <Route path='/category' component={Category} /> */}
 
-                    <Route path='/chemical' render={(props) => <ChemicalPage {...props} addToInventory={this.addToInventory}/>}
+                    <Route path='/chemical' render={(props) => <ChemicalPage {...props} addToInventory={this.addToInventory} />}
                     />
-                    <Route path='/inventory' render={(props) => <InventoryPage {...props} 
-                        deleteItem={this.deleteItem} 
-                        categories={this.state.categories} 
+                    <Route path='/inventory' render={(props) => <InventoryPage {...props}
+                        deleteItem={this.deleteItem}
+                        categories={this.state.categories}
                         inventoryByCategory={this.state.inventoryByCategory} />} />
                     <Redirect to='/' />
 
-                    
+
                 </Switch>
             </div>
         );
