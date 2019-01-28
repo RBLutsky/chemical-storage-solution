@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from "lodash";
 
 class InventoryCard extends Component {
 
@@ -7,47 +8,31 @@ class InventoryCard extends Component {
         return (
             <div>
                 <div className="card-deck">
-
-
-                    {this.props.inventoryByCategory.map((category, i) =>
-                        <div className="card border-secondary text-white bg-info mb-3">
+                    
+                    <div className="card border-secondary text-white bg-info mb-3" key={this.props.category[0]["Storage Category"]} >
                         <div className="card-body">
                             <div className="card-header text-center">
-                                    {'storage category goes here'}
-                                {/* {category["Storage Category"]} */}
+                                <b>{this.props.category[0]["Storage Category"]}</b>
                             </div >
 
                             <p className="card-text text-center">
-                                {'Storage Cautions go here'}
-                                {/* <b> */}
-                            {/* {this.props.categories["Category Definitions"]} <b>{this.props.categories["Storage Cautions"]} */}
-                            
-                            {/* </b> */}
+                                {this.props.category[0]["Category Definitions"]} {this.props.category[0]["Storage Cautions"]}
                             </p>
                         </div>
-                        )}
 
-{/* category["Category Definitions"] category["Storage Cautions"] */}
+
                         <ul className="list-group list-group-flush">
-                            {this.props.inventoryByCategory[i].map((item, i) =>
-                            <li class="list-group-item" key={item.Id + i} >
-                                <button type="button" class="btn btn-secondary" size='sm' onClick={() => this.props.deleteItem(item.Id)}>x</button>
+                            {this.props.category.map((chem, i) =>
+                                <li className="list-group-item" key={chem.Id + i} >
+                                    <button type="button" className="btn btn-secondary" size='sm' onClick={() => this.props.deleteItem(chem.Id)}>x</button>
+                                                    
+                                    {chem['Chemical Name']}
                                                 
-                                {item['Chemical Name']}
-                                            
-                            </li>
-                        )}
-                        </ul>
+                                </li>
+                            )}
+                        </ul> 
 
-                        <button type="button" class="btn btn-secondary">Button</button>
-
-                        {/* <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div> */}
-
-                     </div>
-                    )}
+                    </div>
                 </div>
             </div>
         )

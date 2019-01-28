@@ -9,7 +9,7 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
-import chemicalNames from '../data/chemicalNames';
+import fullList from '../data/fullList';
 import SearchList from './SearchList';
 
 class ChemicalPage extends Component {
@@ -19,13 +19,13 @@ class ChemicalPage extends Component {
             searchResults: []
         };
         this.chemicalSearch = this.chemicalSearch.bind(this);
-        // this.onClearArray=this.onClearArray.bind(this);
+      
     }
 
 
     //search for a chemical
     chemicalSearch(searchTerm) {
-        let results = chemicalNames.filter(chem => {
+        let results = fullList.filter(chem => {
             if (chem['Chemical Name'].toLowerCase().includes(searchTerm.toLowerCase())) {
                 return chem;
             } else {
@@ -35,16 +35,11 @@ class ChemicalPage extends Component {
             }
         });
         this.setState({ searchResults: results }, function () {
-            // console.log(this.state);
+           console.log(this.state);
         })
-        // console.log('RESULTS ARE', results)
-    }
+           }
 
-    // onClearArray = ()=> {
-    //     this.setState({searchResults:[]})
-    // }
-
-
+    
     render() {
         return (
             <div>
@@ -54,11 +49,11 @@ class ChemicalPage extends Component {
                 <SearchBar chemicalSearch={this.chemicalSearch} />
                 <br />
                 <Link to='/'>
-                    <button type="button" class="btn btn-secondary">Home</button>
+                    <button type="button" className="btn btn-secondary">Home</button>
                 </Link>
 
                 <Link to='/inventory'>
-                    <button type="button" class="btn btn-secondary">View Inventory</button>
+                    <button type="button" className="btn btn-secondary">View Inventory</button>
                 </Link>
 
                 <SearchList searchResults={this.state.searchResults} addToInventory={this.props.addToInventory} />

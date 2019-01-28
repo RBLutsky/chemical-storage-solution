@@ -16,11 +16,11 @@ const Home = () => {
                 {/* <User /> */}
 
                 <Link to='/chemical'>
-                    <button type="button" class="btn btn-secondary">SEARCH</button>
+                    <button type="button" className="btn btn-secondary">SEARCH</button>
                 </Link>
 
                 <Link to='/inventory'>
-                    <button type="button" class="btn btn-secondary">VIEW Inventory</button>
+                    <button type="button" className="btn btn-secondary">VIEW Inventory</button>
                 </Link>
             </div>
         </div>
