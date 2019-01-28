@@ -54,11 +54,11 @@ class ChemicalPage extends Component {
                 <SearchBar chemicalSearch={this.chemicalSearch} />
                 <br />
                 <Link to='/'>
-                    <button type="button" class="btn btn-secondary">Home</button>
+                    <button type="button" className="btn btn-secondary">Home</button>
                 </Link>
 
                 <Link to='/inventory'>
-                    <button type="button" class="btn btn-secondary">View Inventory</button>
+                    <button type="button" className="btn btn-secondary">View Inventory</button>
                 </Link>
 
                 <SearchList searchResults={this.state.searchResults} addToInventory={this.props.addToInventory} />

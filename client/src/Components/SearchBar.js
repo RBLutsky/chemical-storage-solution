@@ -37,7 +37,7 @@ class SearchBar extends Component {
                     onChange={this.onChange}
                 />
                 <span>
-                    <button type="submit" class="btn btn-secondary" onClick={this.onClick} >Search</button>
+                    <button type="submit" className="btn btn-secondary" onClick={this.onClick} >Search</button>
 
                 </span>
             </div>

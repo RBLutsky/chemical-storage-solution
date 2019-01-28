@@ -12,7 +12,7 @@ class SearchList extends Component {
                     {this.props.searchResults.map((result) =>
                         <li className="list-group-item" key={result.Id} >
                             <h4>
-                                <button type="button" class="btn btn-secondary btn-sm" onClick={() => this.props.addToInventory(result)}>+</button>
+                                <button type="button" className="btn btn-secondary btn-sm" onClick={() => this.props.addToInventory(result)}>+</button>
 
                                 {result['Chemical Name']} {result['Storage Category']}
                             </h4>

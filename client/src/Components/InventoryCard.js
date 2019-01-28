@@ -4,18 +4,16 @@ import _ from "lodash";
 class InventoryCard extends Component {
 
     render() {
-        
+        console.log('cats: ', this.props.cats)
         return (
             <div>
                 <div className="card-deck">
-
-
-                     {this.props.cats }.map((category, i) =>
+                     {this.props.cats}.map((category) =>
                         <div className="card border-secondary text-white bg-info mb-3">
                         <div className="card-body">
                             <div className="card-header text-center">
                                     {'storage category goes here'}
-                                {/* {category["Storage Category"]} */}
+                                {["Storage Category"]}
                             </div >
 
                             <p className="card-text text-center">
@@ -29,22 +27,22 @@ class InventoryCard extends Component {
                         )}
 
 {/* category["Category Definitions"] category["Storage Cautions"] */}
-                        <ul className="list-group list-group-flush">
+                        {/* <ul className="list-group list-group-flush">
                             {this.props.inventoryByCategory[i].map((item, i) =>
-                            <li class="list-group-item" key={item.Id + i} >
-                                <button type="button" class="btn btn-secondary" size='sm' onClick={() => this.props.deleteItem(item.Id)}>x</button>
+                            <li className="list-group-item" key={item.Id + i} >
+                                <button type="button" className="btn btn-secondary" size='sm' onClick={() => this.props.deleteItem(item.Id)}>x</button>
                                                 
                                 {item['Chemical Name']}
                                             
                             </li>
                         )}
-                        </ul>
+                        </ul> */}
 
-                        <button type="button" class="btn btn-secondary">Button</button>
+                        <button type="button" className="btn btn-secondary">Button</button>
 
-                        {/* <div class="card-body">
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
+                        {/* <div className="card-body">
+                            <a href="#" className="card-link">Card link</a>
+                            <a href="#" className="card-link">Another link</a>
                         </div> */}
 
                      </div>

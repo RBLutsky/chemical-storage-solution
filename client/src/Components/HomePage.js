@@ -20,7 +20,7 @@ const Home = () => {
                 </Link>
 
                 <Link to='/inventory'>
-                    <button type="button" class="btn btn-secondary">VIEW Inventory</button>
+                    <button type="button" className="btn btn-secondary">VIEW Inventory</button>
                 </Link>
             </div>
         </div>
