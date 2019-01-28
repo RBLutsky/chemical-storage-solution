@@ -1,9 +1,34 @@
 import React, { Component } from 'react';
+import _ from "lodash";
 
 class InventoryCard extends Component {
 
-    render() {
+  
         
+
+    render() {
+        const cats = this.props.inventoryByCategory;
+        const set = new Set()
+        for (var i=0; i<cats.length; i++){
+            for (var j=0; j<cats[i].length; j++) {
+               console.log('cats2:', cats[i][j]["Storage Category"])
+              
+                set.add(cats[i][j]["Storage Category"])
+                             
+            } 
+        }console.log('set:', set)
+
+        
+
+
+        // console.log('Categories:',this.props.categories.map((category) => category["Storage Category"]))
+        // console.log('Inventory: ',this.props.inventoryByCategory.map((categoryA) => categoryA.map((item)=>item["Storage Category"])))
+
+        // const set = new Set(this.props.inventoryByCategory.map((categoryA) => categoryA.map((item) => item["Storage Category"])))
+        // console.log('set:', set)
+        
+        // console.log(this.props.inventoryByCategory[i].map((item, i) => item["Storage Category"]))
+
         return (
             <div>
                 <div className="card-deck">
