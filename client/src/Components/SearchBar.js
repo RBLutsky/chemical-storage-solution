@@ -15,7 +15,7 @@ class SearchBar extends Component {
     onClick(e) {
         e.preventDefault();
         this.props.chemicalSearch(this.state.searchTerm);
-        // this.props.onClearArray();
+       
     }
 
     // grab the term each time the input changes

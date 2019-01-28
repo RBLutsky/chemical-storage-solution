@@ -20,13 +20,9 @@ class InventoryPage extends Component {
 
                 </Link>
 
-                <InventoryCard 
-                    cats={this.props.cats}
-                    /> 
+                <InventoryCard inventoryByCategory={this.props.inventoryByCategory}/> 
 
             </div>
-
-
         )
     }
 }

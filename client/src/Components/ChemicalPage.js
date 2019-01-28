@@ -9,7 +9,7 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
-import chemicalNames from '../data/chemicalNames';
+import fullList from '../data/fullList';
 import SearchList from './SearchList';
 
 class ChemicalPage extends Component {
@@ -25,7 +25,7 @@ class ChemicalPage extends Component {
 
     //search for a chemical
     chemicalSearch(searchTerm) {
-        let results = chemicalNames.filter(chem => {
+        let results = fullList.filter(chem => {
             if (chem['Chemical Name'].toLowerCase().includes(searchTerm.toLowerCase())) {
                 return chem;
             } else {
@@ -35,7 +35,7 @@ class ChemicalPage extends Component {
             }
         });
         this.setState({ searchResults: results }, function () {
-            // console.log(this.state);
+           console.log(this.state);
         })
         // console.log('RESULTS ARE', results)
     }

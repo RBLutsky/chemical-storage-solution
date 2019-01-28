@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class SearchList extends Component {
         
     render() {
-        console.log('SearchList: ', this.props);
+       
         return (
             <div className="list-group">
                 <ul className="list-group">

@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 import HomePage from './HomePage';
 import ChemicalPage from './ChemicalPage';
 import InventoryPage from './InventoryPage';
-import chemicalStorage from '../data/chemicalStorage';
 import _ from 'lodash';
 
 class App extends Component {
@@ -13,16 +12,15 @@ class App extends Component {
         super()
         this.state = {
             inventory: [],
-            categories: chemicalStorage,
             inventoryByCategory: [],
-            cats: []
+                       
         };
         this.addToInventory = this.addToInventory.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
     }
 
     componentDidMount = async () => {
-        await this.hydrateStateWithLocalStorage();
+        this.hydrateStateWithLocalStorage();
 
         // add event listener to save state to localStorage
         // when user leaves/refreshes the page
@@ -31,19 +29,6 @@ class App extends Component {
             this.saveStateToLocalStorage.bind(this)
         );
 
-        //match storage category for each inventoryByCategory to its twin in categories
-        let foundCategory;
-        console.log(this.state.inventoryByCategory);
-        const cats = await this.state.inventoryByCategory.map((category) => {
-            foundCategory = this.state.categories.find((selectedCategory) => {
-
-                return selectedCategory["Storage Category"] === category[0]["Storage Category"]
-            }
-            )
-            return { ...category, storageCategory: foundCategory }
-        })
-
-        await this.setState({cats: cats})
     }
 
     componentWillUnmount() {
@@ -103,12 +88,8 @@ class App extends Component {
             .groupBy("Storage Category")
             .sortBy(["Chemical Name"])
             .value();
-        console.log('chemicalsByCategory:' ,chemicalsByCategory);
 
-        this.setState({ inventoryByCategory: chemicalsByCategory});
-        console.log('inventoryByCategory: ', this.state.inventoryByCategory)
-
-
+        this.setState({ inventoryByCategory: chemicalsByCategory });
 
     }
 
@@ -133,14 +114,14 @@ class App extends Component {
                     {/* to show details of 1 chemical */}
                     {/* <Route path='/chemical/:id' component={ChemicalDetailsPage}/> */}
 
-                    {/* <Route path='/category' component={Category} /> */}
-
                     <Route path='/chemical' render={(props) => <ChemicalPage {...props} addToInventory={this.addToInventory} />}
                     />
                     <Route path='/inventory' render={(props) => <InventoryPage {...props}
                         deleteItem={this.deleteItem}
-                        cats={this.state.cats} />} />
-                        
+                        inventoryByCategory={this.state.inventoryByCategory} 
+                        />} 
+                    />
+
                     <Redirect to='/' />
 
 
