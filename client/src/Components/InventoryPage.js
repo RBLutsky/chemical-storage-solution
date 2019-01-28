@@ -1,54 +1,33 @@
 import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, ListGroup, ListGroupItem } from 'reactstrap';
-import _ from 'lodash';
+import InventoryCard from './InventoryCard';
 
 class InventoryPage extends Component {
 
     render() {
-        //remove 'result' as new key on array
-        let inventory = this.props.inventory
-        console.log('INVENTORY', inventory)
-
-        // let categories = this.props.categories
-        // console.log('categories', categories)
-       
-        let inventoryGroups = _.groupBy(inventory, "Storage Category");
-        console.log('groups:', inventoryGroups )
 
         return (
             <div>
                 <h1>My Storage Solution</h1>
                 <Link to='/'>
-                    <Button color="primary">Home</Button>
+                    <button type="button" class="btn btn-secondary">Home</button>
+
                 </Link>
 
                 <Link to='/chemical'>
-                    <Button color="primary">SEARCH</Button>
+                    <button type="button" class="btn btn-secondary">SEARCH</button>
+
                 </Link>
 
-                {/* <div className="listBox">
-                    inventory.filter((category) => {
-                        
-                    }) */}
+                <InventoryCard 
+                    categories={this.props.categories}
+                    inventoryByCategory={this.props.inventoryByCategory}
+                    /> 
+
+            </div>
 
 
-
-                    <ListGroup>
-                        {inventory.map((item) =>
-                            <ListGroupItem key={item.Id} >
-                                <h5>
-                                    <Button color="secondary" size='sm' onClick={() => this.props.deleteItem(item.Id)}>x</Button>
-                                    {item['Chemical Name']} {item['Storage Category']}
-                                </h5>
-                            </ListGroupItem>
-                        )}
-                    </ListGroup>
-                </div>
-
-
-            // </div>
         )
     }
 }

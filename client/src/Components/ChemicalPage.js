@@ -7,7 +7,6 @@
 
 import React from 'react';
 import { Component } from 'react';
-import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import chemicalNames from '../data/chemicalNames';
@@ -41,7 +40,7 @@ class ChemicalPage extends Component {
         // console.log('RESULTS ARE', results)
     }
 
-        // onClearArray = ()=> {
+    // onClearArray = ()=> {
     //     this.setState({searchResults:[]})
     // }
 
@@ -50,21 +49,21 @@ class ChemicalPage extends Component {
         return (
             <div>
                 <h1>Search by Chemical Name</h1>
-               
+
                 {/* set new prop/value(function) to pass to SearchBar */}
-                <SearchBar chemicalSearch={this.chemicalSearch} onClearArray={this.onClearArray} />
-                <br/>
+                <SearchBar chemicalSearch={this.chemicalSearch} />
+                <br />
                 <Link to='/'>
-                    <Button color="primary">Home</Button>
+                    <button type="button" class="btn btn-secondary">Home</button>
                 </Link>
 
                 <Link to='/inventory'>
-                    <Button color="primary">View Inventory</Button>
+                    <button type="button" class="btn btn-secondary">View Inventory</button>
                 </Link>
 
-                <SearchList searchResults={this.state.searchResults} addToInventory={this.props.addToInventory}/>
+                <SearchList searchResults={this.state.searchResults} addToInventory={this.props.addToInventory} />
 
-               
+
             </div>
         )
 

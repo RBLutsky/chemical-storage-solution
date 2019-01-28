@@ -72,22 +72,5 @@ body .backgroundImage{
     box-sizing: border-box;
 }
 
-.listBox {
-    position: relative;
-    padding: 3em 1em 1em;
-    border: 1px solid #d8d8d8;
-    margin: 1.5rem 0 0;
-}
-
-.listBox::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 1em;
-    color: #aaa;
-    font-size: smaller;
-    font-weight: 500;
-    /* content: ; */
-}
 
 

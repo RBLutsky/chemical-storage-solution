@@ -6,14 +6,15 @@ import HomePage from './HomePage';
 import ChemicalPage from './ChemicalPage';
 import InventoryPage from './InventoryPage';
 import chemicalStorage from '../data/chemicalStorage';
-
+import _ from 'lodash';
 
 class App extends Component {
     constructor() {
         super()
         this.state = {
             inventory: [],
-            categories: chemicalStorage
+            categories: chemicalStorage,
+            inventoryByCategory: []
         };
         this.addToInventory = this.addToInventory.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
@@ -75,12 +76,27 @@ class App extends Component {
 
     //localStorage only takes strings as values (key, value)
     addToInventory(result) {
-        //new item = result
+
         //copy current inventory
         const inventory = [...this.state.inventory];
         //add result to inventory and update state
-        this.setState({ inventory: inventory.concat( result ) });
+        this.setState({ inventory: inventory.concat(result) });
+
+        //sort inventory in to storage categories
+        const chemicalsByCategory = _
+            .chain(inventory)
+            .groupBy("Storage Category")
+            .sortBy(["Chemical Name"])
+            .value();
+        console.log('chemicalsByCategory:' ,chemicalsByCategory);
+
+        this.setState({ inventoryByCategory: chemicalsByCategory});
+        console.log('inventoryByCategory: ', this.state.inventoryByCategory)
+
+
+
     }
+
 
     deleteItem(chemID) {
         // copy current inventory
@@ -104,12 +120,16 @@ class App extends Component {
 
                     {/* <Route path='/category' component={Category} /> */}
 
-                    <Route path='/chemical' render={(props) => <ChemicalPage {...props} addToInventory={this.addToInventory}/>}
+                    <Route path='/chemical' render={(props) => <ChemicalPage {...props} addToInventory={this.addToInventory} />}
                     />
-                    <Route path='/inventory' render={(props) => <InventoryPage {...props} deleteItem={this.deleteItem} inventory={this.state.inventory} />} />
+                    <Route path='/inventory' render={(props) => <InventoryPage {...props}
+                        deleteItem={this.deleteItem}
+                        categories={this.state.categories}
+                        inventoryByCategory={this.state.inventoryByCategory} />} />
+                        
                     <Redirect to='/' />
 
-                    
+
                 </Switch>
             </div>
         );
