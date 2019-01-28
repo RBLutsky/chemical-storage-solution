@@ -1,47 +1,54 @@
 import React, { Component } from 'react';
-import InventoryItem from './InventoryItem';
-import {
-    Card, CardDeck, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText, ListGroup, ListGroupItem
-} from 'reactstrap';
-
 
 class InventoryCard extends Component {
 
-
-
     render() {
         
-
         return (
             <div>
-                <CardDeck>
-                    {this.props.inventoryByCategory.map((category, i) =>
-                        <Card key={i}>
-                            <CardBody  style={{ backgroundColor: 'lightgrey', borderColor: '#333', color: 'black'}}
-                            >
-                                <CardTitle>{category["Storage Category"]}</CardTitle>
+                <div className="card-deck">
 
-                                <CardText>{this.props.categories["Category Definitions"]} <b>{this.props.categories["Storage Cautions"]}</b></CardText>
+
+                    {this.props.inventoryByCategory.map((category, i) =>
+                        <div className="card border-secondary text-white bg-info mb-3">
+                        <div className="card-body">
+                            <div className="card-header text-center">
+                                    {'storage category goes here'}
+                                {/* {category["Storage Category"]} */}
+                            </div >
+
+                            <p className="card-text text-center">
+                                {'Storage Cautions go here'}
+                                {/* <b> */}
+                            {/* {this.props.categories["Category Definitions"]} <b>{this.props.categories["Storage Cautions"]} */}
+                            
+                            {/* </b> */}
+                            </p>
+                        </div>
+                        )}
 
 {/* category["Category Definitions"] category["Storage Cautions"] */}
-                                <ListGroup>
-                                    {this.props.inventoryByCategory[i].map((item, i) =>
-                                        <ListGroupItem key={item.Id + i} >
-                                            <h5>
-                                                <Button color="secondary" size='sm' onClick={() => this.props.deleteItem(item.Id)}>x</Button>
+                        <ul className="list-group list-group-flush">
+                            {this.props.inventoryByCategory[i].map((item, i) =>
+                            <li class="list-group-item" key={item.Id + i} >
+                                <button type="button" class="btn btn-secondary" size='sm' onClick={() => this.props.deleteItem(item.Id)}>x</button>
+                                                
+                                {item['Chemical Name']}
+                                            
+                            </li>
+                        )}
+                        </ul>
 
-                                                {item['Chemical Name']}
-                                            </h5>
-                                        </ListGroupItem>
-                                    )}
-                                </ListGroup>
+                        <button type="button" class="btn btn-secondary">Button</button>
 
-                                <Button>Button</Button>
+                        {/* <div class="card-body">
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div> */}
 
-                            </CardBody>
-                        </Card>
+                     </div>
                     )}
-                </CardDeck>
+                </div>
             </div>
         )
     }

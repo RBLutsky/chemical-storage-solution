@@ -1,41 +1,30 @@
 import React from 'react';
-import {Button } from 'reactstrap';
-import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
-import User from './User';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
     // render() {
-        return (
-            <div className='Home'>
-                <div className='backgroundImage'></div>
-                
-                <div className='bg-text'>
-                    <h1> CHEMICAL STORAGE SOLUTION</h1>
-                    <p>Search for safe storage information by chemical name.  Save chemicals to your own inventory sorted for you by storage code. </p>
-                    
+    return (
+        <div className='Home'>
+            <div className='backgroundImage'></div>
 
-                        {/* <User /> */}
+            <div className='bg-text'>
+                <h1> CHEMICAL STORAGE SOLUTION</h1>
+                <p>Search for safe storage information by chemical name.  Save chemicals to your own inventory sorted for you by storage code. </p>
 
-                        <Link to='/chemical'> 
-                            <Button color="primary">SEARCH</Button>
-                        </Link>
 
-                        <Link to='/inventory'> 
-                            <Button color="primary">VIEW INVENTORY</Button>
-                        </Link>
-                </div>
+                {/* <User /> */}
+
+                <Link to='/chemical'>
+                    <button type="button" class="btn btn-secondary">SEARCH</button>
+                </Link>
+
+                <Link to='/inventory'>
+                    <button type="button" class="btn btn-secondary">VIEW Inventory</button>
+                </Link>
             </div>
-        )
-    }
-// }
-
-// Jumbotron.propTypes = {
-//     // Pass in a Component to override default element
-//     tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
-//     fluid: PropTypes.bool,
-//     className: PropTypes.string
-// };
+        </div>
+    )
+}
 
 export default Home

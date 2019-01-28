@@ -126,6 +126,7 @@ class App extends Component {
                         deleteItem={this.deleteItem}
                         categories={this.state.categories}
                         inventoryByCategory={this.state.inventoryByCategory} />} />
+                        
                     <Redirect to='/' />
 
 

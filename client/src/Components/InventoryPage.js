@@ -1,9 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, ListGroup, ListGroupItem } from 'reactstrap';
-import _ from 'lodash';
-import InventoryItem from './InventoryItem';
 import InventoryCard from './InventoryCard';
 
 class InventoryPage extends Component {
@@ -14,11 +11,13 @@ class InventoryPage extends Component {
             <div>
                 <h1>My Storage Solution</h1>
                 <Link to='/'>
-                    <Button color="primary">Home</Button>
+                    <button type="button" class="btn btn-secondary">Home</button>
+
                 </Link>
 
                 <Link to='/chemical'>
-                    <Button color="primary">SEARCH</Button>
+                    <button type="button" class="btn btn-secondary">SEARCH</button>
+
                 </Link>
 
                 <InventoryCard 

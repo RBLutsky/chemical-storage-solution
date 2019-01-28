@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
 
 class SearchBar extends Component {
     constructor(props) {
@@ -38,7 +37,8 @@ class SearchBar extends Component {
                     onChange={this.onChange}
                 />
                 <span>
-                    <Button type='submit' onClick={this.onClick} color="primary">Search</Button>
+                    <button type="submit" class="btn btn-secondary" onClick={this.onClick} >Search</button>
+
                 </span>
             </div>
         );
