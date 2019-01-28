@@ -14,14 +14,15 @@ class App extends Component {
         this.state = {
             inventory: [],
             categories: chemicalStorage,
-            inventoryByCategory: []
+            inventoryByCategory: [],
+            cats: []
         };
         this.addToInventory = this.addToInventory.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
     }
 
-    componentDidMount() {
-        this.hydrateStateWithLocalStorage();
+    componentDidMount = async () => {
+        await this.hydrateStateWithLocalStorage();
 
         // add event listener to save state to localStorage
         // when user leaves/refreshes the page
@@ -29,6 +30,20 @@ class App extends Component {
             "beforeunload",
             this.saveStateToLocalStorage.bind(this)
         );
+
+        //match storage category for each inventoryByCategory to its twin in categories
+        let foundCategory;
+        console.log(this.state.inventoryByCategory);
+        const cats = await this.state.inventoryByCategory.map((category) => {
+            foundCategory = this.state.categories.find((selectedCategory) => {
+
+                return selectedCategory["Storage Category"] === category[0]["Storage Category"]
+            }
+            )
+            return { ...category, storageCategory: foundCategory }
+        })
+
+        await this.setState({cats: cats})
     }
 
     componentWillUnmount() {
@@ -124,8 +139,7 @@ class App extends Component {
                     />
                     <Route path='/inventory' render={(props) => <InventoryPage {...props}
                         deleteItem={this.deleteItem}
-                        categories={this.state.categories}
-                        inventoryByCategory={this.state.inventoryByCategory} />} />
+                        cats={this.state.cats} />} />
                         
                     <Redirect to='/' />
 

@@ -21,8 +21,7 @@ class InventoryPage extends Component {
                 </Link>
 
                 <InventoryCard 
-                    categories={this.props.categories}
-                    inventoryByCategory={this.props.inventoryByCategory}
+                    cats={this.props.cats}
                     /> 
 
             </div>
