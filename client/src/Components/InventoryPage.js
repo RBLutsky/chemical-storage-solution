@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import InventoryCard from './InventoryCard';
 
 class InventoryPage extends Component {
-
+    
     render() {
-
+ 
         return (
             <div>
                 <h1>My Storage Solution</h1>
@@ -20,8 +20,10 @@ class InventoryPage extends Component {
 
                 </Link>
 
-                <InventoryCard inventoryByCategory={this.props.inventoryByCategory}/> 
-
+                {this.props.inventoryByCategory.map((category) => 
+                    <InventoryCard category={category} deleteItem={this.props.deleteItem}/>
+                )}
+               
             </div>
         )
     }

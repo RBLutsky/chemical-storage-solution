@@ -19,7 +19,7 @@ class ChemicalPage extends Component {
             searchResults: []
         };
         this.chemicalSearch = this.chemicalSearch.bind(this);
-        // this.onClearArray=this.onClearArray.bind(this);
+      
     }
 
 
@@ -37,14 +37,9 @@ class ChemicalPage extends Component {
         this.setState({ searchResults: results }, function () {
            console.log(this.state);
         })
-        // console.log('RESULTS ARE', results)
-    }
+           }
 
-    // onClearArray = ()=> {
-    //     this.setState({searchResults:[]})
-    // }
-
-
+    
     render() {
         return (
             <div>
