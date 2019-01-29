@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     // render() {
     return (
-        <div className='Home'>
-            <div className='backgroundImage'></div>
-
+        <div className="home bg-image">
             <div className='bg-text'>
                 <h1> CHEMICAL STORAGE SOLUTION</h1>
                 <p>Search for safe storage information by chemical name.  Save chemicals to your own inventory sorted for you by storage code. </p>

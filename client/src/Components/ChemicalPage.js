@@ -42,19 +42,21 @@ class ChemicalPage extends Component {
     
     render() {
         return (
-            <div>
-                <h1>Search by Chemical Name</h1>
+            <div> 
+                <div className="search" style={{ border: "3px solid  #03688d", textAlign:"center"}}>
+                    <h1>Search by Chemical Name</h1>
 
-                {/* set new prop/value(function) to pass to SearchBar */}
-                <SearchBar chemicalSearch={this.chemicalSearch} />
-                <br />
-                <Link to='/'>
-                    <button type="button" className="btn btn-secondary">Home</button>
-                </Link>
+                    {/* set new prop/value(function) to pass to SearchBar */}
+                    <SearchBar chemicalSearch={this.chemicalSearch} />
+                    <br />
+                    <Link to='/'>
+                        <button type="button" className="btn btn-secondary">Home</button>
+                    </Link>
 
-                <Link to='/inventory'>
-                    <button type="button" className="btn btn-secondary">View Inventory</button>
-                </Link>
+                    <Link to='/inventory'>
+                        <button type="button" className="btn btn-secondary">View Inventory</button>
+                    </Link>
+                </div>
 
                 <SearchList searchResults={this.state.searchResults} addToInventory={this.props.addToInventory} />
 

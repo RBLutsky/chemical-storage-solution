@@ -9,16 +9,17 @@ class InventoryPage extends Component {
  
         return (
             <div>
-                <h1>My Storage Solution</h1>
+                <h1 style={{ textAlign: "center"}}>My Storage Solution</h1>
+
                 <Link to='/'>
                     <button type="button" className="btn btn-secondary">Home</button>
-
                 </Link>
 
                 <Link to='/chemical'>
                     <button type="button" className="btn btn-secondary">SEARCH</button>
-
                 </Link>
+
+                <br/>
 
                 {this.props.inventoryByCategory.map((category) => 
                     <InventoryCard category={category} deleteItem={this.props.deleteItem}/>
