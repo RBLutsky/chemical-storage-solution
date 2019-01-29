@@ -6,6 +6,7 @@ import HomePage from './HomePage';
 import ChemicalPage from './ChemicalPage';
 import InventoryPage from './InventoryPage';
 import _ from 'lodash';
+import Nav from './Nav';
 
 class App extends Component {
     constructor() {
@@ -108,7 +109,8 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <>
+            <Nav />
                 <Switch>
                     <Route exact path='/' component={HomePage} />
                     {/* to show details of 1 chemical */}
@@ -121,12 +123,9 @@ class App extends Component {
                         inventoryByCategory={this.state.inventoryByCategory} 
                         />} 
                     />
-
                     <Redirect to='/' />
-
-
                 </Switch>
-            </div>
+            </>
         );
     }
 }

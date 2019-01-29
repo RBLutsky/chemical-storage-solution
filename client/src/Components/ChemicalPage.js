@@ -48,14 +48,14 @@ class ChemicalPage extends Component {
 
                     {/* set new prop/value(function) to pass to SearchBar */}
                     <SearchBar chemicalSearch={this.chemicalSearch} />
-                    <br />
+                    {/* <br />
                     <Link to='/'>
                         <button type="button" className="btn btn-secondary">Home</button>
                     </Link>
 
                     <Link to='/inventory'>
                         <button type="button" className="btn btn-secondary">View Inventory</button>
-                    </Link>
+                    </Link> */}
                 </div>
 
                 <SearchList searchResults={this.state.searchResults} addToInventory={this.props.addToInventory} />
