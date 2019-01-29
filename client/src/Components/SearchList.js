@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 
 
 class SearchList extends Component {
-        
+    state = {
+        plus: true
+   }
+    
+   handleClick = (result)=>{
+        this.props.addToInventory(result)
+        this.setState({plus: !this.state.plus})
+    }
     render() {
        
         return (
@@ -12,7 +19,7 @@ class SearchList extends Component {
                     {this.props.searchResults.map((result) =>
                         <li className="list-group-item" key={result.Id} >
                             <h4>
-                                <button type="button" className="btn plus btn-secondary btn-sm" onClick={() => this.props.addToInventory(result)}>+</button>
+                                <button type="button" className="btn plus btn-secondary btn-sm" onClick={() => this.handleClick(result)}>{this.state.plus ? '+' : <img src="https://icon.now.sh/check"/>}</button>
 
                                 {result['Chemical Name']} {result['Storage Category']}
                             </h4>

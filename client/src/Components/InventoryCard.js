@@ -44,8 +44,8 @@ const InventoryCard = ({category, deleteItem}) => (
 
             <ul className="list-group list-group-flush" >
               {category.map((chem, i) =>
-                <li className="list-group-item" key={chem.Id + i} style={{ color: "black", padding: "0.25rem 1rem" }}>
-                    <button type="button" className="btn btn-secondary btn-sm" onClick={() => deleteItem(chem.Id+i)}>x</button>
+                <li className="list-group-item" key={Math.random()*5} style={{ color: "black", padding: "0.25rem 1rem" }}>
+                    <button type="button" className="btn btn-secondary btn-sm" onClick={() => deleteItem(chem.Id)}>x</button>
 
                     {chem['Chemical Name']}
 

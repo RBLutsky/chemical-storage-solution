@@ -94,17 +94,33 @@ class App extends Component {
 
     }
 
-
-    deleteItem(chemID) {
+    deleteItem(chemId) {
         // copy current inventory
+        console.log('chemId:', chemId)
         const inventory = [...this.state.inventory];
+        console.log('inventory-pre:', inventory);
 
-        // filter out the item being deleted
-        const updatedInventory = inventory.filter(item => item.Id !== chemID);
-
+        // filter out the item being deleted from inventory
+        const updatedInventory = inventory.filter(item => item.Id !== chemId);
+        console.log('updated:', updatedInventory);
         this.setState({ inventory: updatedInventory });
+        console.log('inventory-post:', inventory);
+
+        const inventoryByCategory = [...this.state.inventoryByCategory];
+        console.log('iBC-pre:', inventoryByCategory)
+        
+        //sort inventory in to storage categories
+        const chemicalsByCategory = _
+            .chain(inventory)
+            .groupBy("Storage Category")
+            .sortBy(["Chemical Name"])
+            .value();
+        this.setState({ inventoryByCategory: chemicalsByCategory });
+        console.log('iBC - post:', inventoryByCategory)
 
     }
+
+        
 
 
     render() {
