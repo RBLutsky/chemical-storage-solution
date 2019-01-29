@@ -8,7 +8,7 @@ class SearchList extends Component {
         return (
             <div className="list-group">
                 <ul className="list-group">
-                    <p>Search Results:  Click to add to Inventory.</p>
+                    <b> <p style={{ color: "blue" }}>Search Results:  Click to add to Inventory.</p></b>
                     {this.props.searchResults.map((result) =>
                         <li className="list-group-item" key={result.Id} >
                             <h4>
