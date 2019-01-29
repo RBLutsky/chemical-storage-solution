@@ -69,6 +69,13 @@ code {
   margin-right: 5px;
 }
 
+.plus {
+  background-color: #03688d;
+}
+
+/* //////////////////////CARDS//////////////////////////////////////// */
+
+
 
 
 /* ////////////////////////////////LISTS///////////////////////////////////// */
@@ -76,7 +83,7 @@ code {
     color: black;
     position: relative;
     display: block;
-    padding: 0.75rem 1.25rem;
+    padding: 0.25rem 1rem;
     margin-bottom: -1px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.125);
@@ -86,15 +93,5 @@ code {
     z-index: 1;
     text-decoration: none;
     cursor: pointer;
-}
-
-/* ////////////////////////INPUTS///////////////// */
-
-.search {
-  border: 3px solid  blue;
-  text-align: center;
-
-
-}
-
+} 
 

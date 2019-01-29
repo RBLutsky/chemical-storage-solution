@@ -43,7 +43,7 @@ class ChemicalPage extends Component {
     render() {
         return (
             <div> 
-                <div className="search">
+                <div className="search" style={{ border: "3px solid  #03688d", textAlign:"center"}}>
                     <h1>Search by Chemical Name</h1>
 
                     {/* set new prop/value(function) to pass to SearchBar */}
