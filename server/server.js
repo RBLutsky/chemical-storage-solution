@@ -24,6 +24,12 @@ connection.connect((err) => {
     console.log('Connected!');
 });
 
+connection.query('SELECT * FROM employees', (err, rows) => {
+    if (err) throw err;
+    console.log('Data received from Db:/n');
+    console.log(rows);
+});
+
 connection.end((err) => {
      // The connection is terminated gracefully
   // Ensures all previously enqueued queries are still
