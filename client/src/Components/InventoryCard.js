@@ -8,6 +8,7 @@ const InventoryCard = ({ category, deleteItem }) => {
 return (
     <div className="col-sm-3">
         <div className="card" key={category[0]["Storage Category"]} style={{ border: "3px solid #6c757d" }}>
+        
             <div className="card-body" style={{ backgroundColor: (category[0]["Storage Category"] === "O") ? "blue" : "white" }}>
                 <h5 className="card-title">{category[0]["Storage Category"]}</h5>
                 <p className="card-text">{category[0]["Category Definitions"]}</p>
