@@ -13,27 +13,53 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'user',
     password: 'password',
-    database: 'sitepoint'
+    database: 'chemicallist'
 });
 
-connection.connect((err) => {
-    if (err) {
-        console.log('Error connecting to DB');
-        return;
-    }
-    console.log('Connected!');
-});
+// connection.connect((err) => {
+//     if (err) {
+//         console.log('Error connecting to DB');
+//         return;
+//     }
+//     console.log('Connected!');
+// });
 
-connection.query('SELECT * FROM employees', (err, rows) => {
-    if (err) throw err;
-    console.log('Data received from Db:/n');
-    console.log(rows);
-});
+// connection.query('SELECT * FROM employees', (err, rows) => {
+//     if (err) throw err;
+//     console.log('Data received from Db:/n');
+//     console.log(rows);
+// });
+
+//Search for a chemical in the chemical table by name that user input
+app.get('/chemicals', (req, res) => {
+    let searchTerm = req.query.searchTerm;
+    console.log('Fetching chemical with name: ' + searchTerm);
+    
+    connection.query(`SELECT * FROM fulllist WHERE Chemical_Name LIKE "%${searchTerm}%";`, (error, rows, fields) => {
+        console.log("THink we fetched");
+        res.json(rows);
+        console.log("where");
+        // if (error) {
+        //     console.log('Error connecting to Db ' + error);
+        //     return;
+        // }
+        // console.log('Connection established');
+        // console.log(results);
+        // res.json(results);
+        // When done with the connection, release it.
+        // connection.release();
+        // console.log("connection released");
+        // // Handle error after the release.
+        // if (error) throw error;
+        // // Don't use the connection here, it has been returned to the pool.
+    });
+
+})
 
 connection.end((err) => {
-     // The connection is terminated gracefully
-  // Ensures all previously enqueued queries are still
-  // before sending a COM_QUIT packet to the MySQL server.
+    // The connection is terminated gracefully
+    // Ensures all previously enqueued queries are still
+    // before sending a COM_QUIT packet to the MySQL server.
 });
 
 

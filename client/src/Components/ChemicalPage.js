@@ -9,7 +9,7 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
-import fullList from '../data/fullList';
+// import fullList from '../data/fullList';
 import SearchList from './SearchList';
 
 class ChemicalPage extends Component {
